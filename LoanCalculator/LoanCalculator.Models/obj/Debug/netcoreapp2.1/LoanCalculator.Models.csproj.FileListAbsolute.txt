@@ -1,0 +1,9 @@
+F:\Work\Dev Work\ArnoldClark\LoanCalculator\LoanCalculator.Models\bin\Debug\netcoreapp2.1\LoanCalculator.Models.deps.json
+F:\Work\Dev Work\ArnoldClark\LoanCalculator\LoanCalculator.Models\bin\Debug\netcoreapp2.1\LoanCalculator.Models.dll
+F:\Work\Dev Work\ArnoldClark\LoanCalculator\LoanCalculator.Models\bin\Debug\netcoreapp2.1\LoanCalculator.Models.pdb
+F:\Work\Dev Work\ArnoldClark\LoanCalculator\LoanCalculator.Models\obj\Debug\netcoreapp2.1\LoanCalculator.Models.csprojAssemblyReference.cache
+F:\Work\Dev Work\ArnoldClark\LoanCalculator\LoanCalculator.Models\obj\Debug\netcoreapp2.1\LoanCalculator.Models.csproj.CoreCompileInputs.cache
+F:\Work\Dev Work\ArnoldClark\LoanCalculator\LoanCalculator.Models\obj\Debug\netcoreapp2.1\LoanCalculator.Models.AssemblyInfoInputs.cache
+F:\Work\Dev Work\ArnoldClark\LoanCalculator\LoanCalculator.Models\obj\Debug\netcoreapp2.1\LoanCalculator.Models.AssemblyInfo.cs
+F:\Work\Dev Work\ArnoldClark\LoanCalculator\LoanCalculator.Models\obj\Debug\netcoreapp2.1\LoanCalculator.Models.dll
+F:\Work\Dev Work\ArnoldClark\LoanCalculator\LoanCalculator.Models\obj\Debug\netcoreapp2.1\LoanCalculator.Models.pdb

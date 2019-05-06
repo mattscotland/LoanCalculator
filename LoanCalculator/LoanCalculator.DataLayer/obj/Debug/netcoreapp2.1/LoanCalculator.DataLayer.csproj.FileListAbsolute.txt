@@ -1,0 +1,9 @@
+F:\Work\Dev Work\ArnoldClark\LoanCalculator\LoanCalculator.DataLayer\bin\Debug\netcoreapp2.1\LoanCalculator.DataLayer.deps.json
+F:\Work\Dev Work\ArnoldClark\LoanCalculator\LoanCalculator.DataLayer\bin\Debug\netcoreapp2.1\LoanCalculator.DataLayer.dll
+F:\Work\Dev Work\ArnoldClark\LoanCalculator\LoanCalculator.DataLayer\bin\Debug\netcoreapp2.1\LoanCalculator.DataLayer.pdb
+F:\Work\Dev Work\ArnoldClark\LoanCalculator\LoanCalculator.DataLayer\obj\Debug\netcoreapp2.1\LoanCalculator.DataLayer.csprojAssemblyReference.cache
+F:\Work\Dev Work\ArnoldClark\LoanCalculator\LoanCalculator.DataLayer\obj\Debug\netcoreapp2.1\LoanCalculator.DataLayer.csproj.CoreCompileInputs.cache
+F:\Work\Dev Work\ArnoldClark\LoanCalculator\LoanCalculator.DataLayer\obj\Debug\netcoreapp2.1\LoanCalculator.DataLayer.AssemblyInfoInputs.cache
+F:\Work\Dev Work\ArnoldClark\LoanCalculator\LoanCalculator.DataLayer\obj\Debug\netcoreapp2.1\LoanCalculator.DataLayer.AssemblyInfo.cs
+F:\Work\Dev Work\ArnoldClark\LoanCalculator\LoanCalculator.DataLayer\obj\Debug\netcoreapp2.1\LoanCalculator.DataLayer.dll
+F:\Work\Dev Work\ArnoldClark\LoanCalculator\LoanCalculator.DataLayer\obj\Debug\netcoreapp2.1\LoanCalculator.DataLayer.pdb

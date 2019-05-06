@@ -1,0 +1,116 @@
+﻿<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+
+<nav class="navbar navbar-fixed-top navbar-dark bg-dark">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand navbar-custom-text" href="#">
+                Loan Calculator Web
+            </a>
+        </div>
+    </div>
+</nav>
+
+        <div>
+        <form name="searchForm">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="form-group col-sm-12 col-md-12 col-lg-8" id="priceDiv">
+                        <label for="trendTextbox" class="control-label">Vehicle  Price:</label>
+                        <input name="price" id="priceTextbox" type="text" class="form-control" maxlength="100" placeholder="Enter Vehicle Price" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-sm-12 col-md-12 col-lg-8" id="depositDiv">
+                        <label for="depositTextbox" class="control-label">Deposit:</label>
+                        <input name="deposit" id="depositTextbox" type="text" class="form-control" maxlength="100" placeholder="Enter Deposit" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-sm-12 col-md-12 col-lg-8" id="deliveryDiv">
+                        <label for="deliveryTextbox" class="control-label">Delivery Date:</label>
+                        <input name="delivery" id="deliveryTextbox" type="text" class="form-control" maxlength="100" placeholder="Select Delivery Date" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-sm-12 col-md-12 col-lg-8" id="financeDiv">
+                        <label for="financeRadio" class="control-label">Finance Option:</label>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="financeRadio1" checked name="financeRadio" value="12">
+                            <label class="custom-control-label" for="financeRadio1">1 Year</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="financeRadio2" name="financeRadio" value="24">
+                            <label class="custom-control-label" for="financeRadio2">2 Years</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="financeRadio3" name="financeRadio" value="36">
+                            <label class="custom-control-label" for="financeRadio3">3 Years</label>
+                        </div>
+                    </div>
+                </div>
+                <button type="reset" id="resetBtn" class="btn btn-primary">Clear</button>
+                <button type="button" id="submitBtn" class="btn btn-primary">Get Payment Schedule</button>
+            </div>
+        </form>
+        </div>
+        <div id="loanDetailsEmpty">
+            There are currently no loan details to display.
+        </div>
+        <div id="loanDetails">
+
+        </div>
+   
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#submitBtn").click(function () {
+            loadLoanDetails();
+        });
+    });
+
+    function loadLoanDetails() {
+        var price = $("#priceTextbox").val();
+        var deposit = $("#depositTextbox").val();
+        var delivery = $("#deliveryTextbox").val();
+        var term = $("input[name='financeRadio']:checked").val();
+        
+        $.ajax({
+            type: "POST",
+            url: "Home/GetLoanDetails",
+            data: {
+                Loan: {
+                    VehiclePrice: price,
+                    Deposit: deposit,
+                    DeliveryDate: delivery,
+                    FinanceMonths: term,
+                    LoanFee: {
+                        ArrangementFee: 0,
+                        CompletionFee: 0
+                    }
+                }
+            },
+            dataType: "json",
+            async: true,
+            cache: false,
+            timeout: 50000, /* Timeout in ms */
+
+
+            success: function (partialViewResult) { /* called when request completes successfully */
+                var divEmpty = $("#loanDetailsEmpty");
+                var divDetails = $("#loanDetails");
+                divEmpty.hide();
+                divDetails.html(partialViewResult.responseText)
+                $divDetails.resize();
+            },
+            error: function (partialViewResult) {
+                var test = '';
+                //TODO:  Deal with error condition..
+                var divEmpty = $("#loanDetailsEmpty");
+                var divDetails = $("#loanDetails");
+                divEmpty.hide();
+                divDetails.html(partialViewResult.responseText)
+
+            }
+        })
+    }
+</script>

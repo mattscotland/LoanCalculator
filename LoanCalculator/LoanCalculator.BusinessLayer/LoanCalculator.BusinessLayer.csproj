@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LoanCalculator.Interfaces\LoanCalculator.Interfaces.csproj" />
+    <ProjectReference Include="..\LoanCalculator.Models\LoanCalculator.Models.csproj" />
+  </ItemGroup>
+
+</Project>

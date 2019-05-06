@@ -1,0 +1,62 @@
+﻿@model Tuple<LoanCalculator.Models.LoanSummary, LoanCalculator.Models.LoanPaymentSchedule>
+@{
+    var summary = Model.Item1;
+    var schedule = Model.Item2;
+}
+<div id="loanDetails">
+    <h4>Loan Summary Details</h4>
+    <div class="row">
+        <div class="form-group col-sm-12 col-md-6 col-lg-6">
+            <label class="col-form-label">Total Loan Amount: &nbsp;&pound;@summary.TotalLoanAmount</label>
+        </div>
+        <div class="form-group col-sm-12 col-md-6 col-lg-6">
+            <label class="col-form-label">Payment Frequency: &nbsp;@summary.PaymentFrequency</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-sm-12 col-md-12 col-lg-12">
+            <label class="col-form-label">(Vehicle Price &pound;@summary.Loan.VehiclePrice - Deposit &pound;@summary.Loan.Deposit + Arrangement Fee &pound;@summary.Loan.LoanFee.ArrangementFee + Completion Fee &pound;@summary.Loan.LoanFee.CompletionFee)</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-sm-12 col-md-6 col-lg-6">
+            <label class="col-form-label">Total No. of Payments: &nbsp;@summary.TotalMonths</label>
+        </div>
+        <div class="form-group col-sm-12 col-md-6 col-lg-6">
+            <label class="col-form-label">Standard Payments: &nbsp; @summary.StandardMonths payments x &pound;@summary.StandardMonthlyPaymentAmount</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-sm-12 col-md-6 col-lg-6">
+            <label class="col-form-label">Initial Payment: &nbsp; 1 payment x &pound;@summary.InitialPaymentAmount</label>
+        </div>
+        <div class="form-group col-sm-12 col-md-6 col-lg-6">
+            <label class="col-form-label">Final Payment: &nbsp; 1 payment x &pound;@summary.FinalPaymentAmount</label>
+        </div>
+    </div>
+</div>
+<div id="loanDetails">
+    <h4>Loan Payment Schedule Details</h4>
+    <table class="table table-condensed">
+        <thead>
+            <tr>
+                <th>Month</th>
+                <th>Date</th>
+                <th>Payment Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var payment in schedule.LoanPayments)
+            {
+                <tr>
+                    <td>@payment.MonthNumber</td>
+                    <td>@payment.PaymentDate.ToString("dd/MM/yyyy")</td>
+                    <td>&pound;@payment.PaymentAmount</td>
+            </tr>
+
+        }
+        </tbody>
+    </table>
+</div>
+
+
